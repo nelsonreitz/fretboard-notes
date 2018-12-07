@@ -23,11 +23,36 @@ class Footer extends Component {
   }
 }
 
+class Fretboard extends Component {
+  render() {
+    let table = [];
+
+    for (let i = 0; i < 8; i++) {
+      let row = [];
+
+      for (let j = 0; j < 15; j++) {
+        row.push(<td>{j}</td>);
+      }
+
+      table.push(<tr>{row}</tr>);
+    }
+
+    return (
+      <div className="Fretboard">
+        <table>
+          {table}
+        </table>
+      </div>
+    );
+  }
+}
+
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header />
+        <Fretboard />
         <Footer />
       </div>
     );
