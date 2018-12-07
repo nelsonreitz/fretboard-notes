@@ -16,8 +16,8 @@ class Footer extends Component {
     return (
       <footer className="Footer">
         2018
-        <a href="http://nelsonreitz.ch" target="_blank" rel="noopener">Nelson Reitz</a>
-        <a href="http://github.com/nelsonreitz/fretboard" target="_blank" rel="noopener">View the source on Github</a>
+        <a href="http://nelsonreitz.ch" target="_blank" rel="noopener noreferrer">Nelson Reitz</a>
+        <a href="http://github.com/nelsonreitz/fretboard" target="_blank" rel="noopener noreferrer">View the source on Github</a>
       </footer>
     );
   }
