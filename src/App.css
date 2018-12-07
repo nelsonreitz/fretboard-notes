@@ -1,3 +1,12 @@
+.App {
+  display: flex;
+  min-height: 100vh;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .Header {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -7,4 +16,10 @@
 .Header .Sitetitle {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.Footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #fdfdfd;
 }
