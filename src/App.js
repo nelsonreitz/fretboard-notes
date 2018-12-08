@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
+const STRINGS = 6;
+const FRETS = 12;
+
 class Header extends Component {
   render() {
     return (
@@ -30,10 +33,11 @@ class FretboardHeader extends Component {
       <th className="Spacer" key="spacer2"></th>
     ];
 
-    // Create columns
-    for (let i  = 1; i < 13; i++) {
-      let className = "Fret-" + i;
-      columns.push(<th className={className} key={i}>{i}</th>);
+    // Create fret numbers
+    for (let i  = 0; i < FRETS; i++) {
+      let fretNumber = i + 1;
+      let className = "Fret-" + fretNumber;
+      columns.push(<th className={className} key={fretNumber}>{fretNumber}</th>);
     }
 
     return (
@@ -51,7 +55,7 @@ class Fretboard extends Component {
     let rows = [];
 
     // Create strings
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < STRINGS + 1; i++) {
       let className = "String-" + i;
       let columns = [
         <td className="Open" key="open">E</td>,
@@ -59,9 +63,10 @@ class Fretboard extends Component {
       ];
 
       // Create frets
-      for (let j = 1; j < 13; j++) {
-        let className = "Fret-" + j;
-        columns.push(<td className={className} key={j}>{j}</td>);
+      for (let j = 0; j < FRETS; j++) {
+        let fretNumber = j + 1;
+        let className = "Fret-" + fretNumber;
+        columns.push(<td className={className} key={fretNumber}>{fretNumber}</td>);
       }
 
       rows.push(<tr className={className} key={i}>{columns}</tr>);
