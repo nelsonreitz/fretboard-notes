@@ -29,7 +29,8 @@ class FretboardHeader extends Component {
 
     // Create columns
     for (let i  = 1; i < 13; i++) {
-      thead.push(<th key={i}>{i}</th>);
+      let className = "Fret-" + i;
+      thead.push(<th className={className} key={i}>{i}</th>);
     }
 
     return (
