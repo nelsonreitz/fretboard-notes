@@ -58,15 +58,16 @@ class Fretboard extends Component {
     for (let i = 0; i < STRINGS + 1; i++) {
       let className = "String-" + i;
       let columns = [
-        <td className="Open" key="open">E</td>,
+        <td className="Open" key="open">{i}</td>,
         <td className="Spacer" key="spacer"></td>
       ];
 
       // Create frets
       for (let j = 0; j < FRETS; j++) {
         let fretNumber = j + 1;
+        let fretNote = TUNINGS[0][i][j];
         let className = "Fret-" + fretNumber;
-        columns.push(<td className={className} key={fretNumber}>{fretNumber}</td>);
+        columns.push(<td className={className} key={fretNumber}>{fretNote}</td>);
       }
 
       rows.push(<tr className={className} key={i}>{columns}</tr>);
@@ -97,5 +98,19 @@ class App extends Component {
     );
   }
 }
+
+const TUNINGS = [
+  {
+    name: "E Standard",
+    abbr: "e_std",
+    "0": ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"],
+    "1": ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"],
+    "2": ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"],
+    "3": ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"],
+    "4": ["Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D"],
+    "5": ["Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"],
+    "6": ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"],
+  }
+];
 
 export default App;
