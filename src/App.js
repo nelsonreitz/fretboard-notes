@@ -23,25 +23,50 @@ class Footer extends Component {
   }
 }
 
+class FretboardHeader extends Component {
+  render() {
+    let thead = [];
+
+    // Create columns
+    for (let i  = 1; i < 13; i++) {
+      thead.push(<th key={i}>{i}</th>);
+    }
+
+    return (
+      <thead>
+        <tr>
+          <th className="Spacer"></th>
+          <th className="Spacer"></th>
+          {thead}
+        </tr>
+      </thead>
+    );
+  }
+}
+
 class Fretboard extends Component {
   render() {
-    let table = [];
+    let tbody = [];
 
-    for (let i = 0; i < 8; i++) {
+    // Create rows
+    for (let i = 0; i < 7; i++) {
       let row = [];
 
-      for (let j = 0; j < 15; j++) {
+      // Create columns
+      for (let j = 0; j < 14; j++) {
         row.push(<td key={j}>{j}</td>);
       }
 
-      table.push(<tr key={i}>{row}</tr>);
+      tbody.push(<tr key={i}>{row}</tr>);
     }
 
     return (
       <div className="Fretboard">
         <table>
+          <FretboardHeader />
+
           <tbody>
-            {table}
+            {tbody}
           </tbody>
         </table>
       </div>
