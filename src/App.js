@@ -31,16 +31,18 @@ class Fretboard extends Component {
       let row = [];
 
       for (let j = 0; j < 15; j++) {
-        row.push(<td>{j}</td>);
+        row.push(<td key={j}>{j}</td>);
       }
 
-      table.push(<tr>{row}</tr>);
+      table.push(<tr key={i}>{row}</tr>);
     }
 
     return (
       <div className="Fretboard">
         <table>
-          {table}
+          <tbody>
+            {table}
+          </tbody>
         </table>
       </div>
     );
