@@ -25,20 +25,21 @@ class Footer extends Component {
 
 class FretboardHeader extends Component {
   render() {
-    let thead = [];
+    let columns = [
+      <th className="Spacer" key="spacer1"></th>,
+      <th className="Spacer" key="spacer2"></th>
+    ];
 
     // Create columns
     for (let i  = 1; i < 13; i++) {
       let className = "Fret-" + i;
-      thead.push(<th className={className} key={i}>{i}</th>);
+      columns.push(<th className={className} key={i}>{i}</th>);
     }
 
     return (
       <thead>
-        <tr>
-          <th className="Spacer"></th>
-          <th className="Spacer"></th>
-          {thead}
+        <tr className="Fretnumbers">
+          {columns}
         </tr>
       </thead>
     );
@@ -47,18 +48,23 @@ class FretboardHeader extends Component {
 
 class Fretboard extends Component {
   render() {
-    let tbody = [];
+    let rows = [];
 
-    // Create rows
+    // Create strings
     for (let i = 0; i < 7; i++) {
-      let row = [];
+      let className = "String-" + i;
+      let columns = [
+        <td className="Open" key="open">E</td>,
+        <td className="Spacer" key="spacer"></td>
+      ];
 
-      // Create columns
-      for (let j = 0; j < 14; j++) {
-        row.push(<td key={j}>{j}</td>);
+      // Create frets
+      for (let j = 1; j < 13; j++) {
+        let className = "Fret-" + j;
+        columns.push(<td className={className} key={j}>{j}</td>);
       }
 
-      tbody.push(<tr key={i}>{row}</tr>);
+      rows.push(<tr className={className} key={i}>{columns}</tr>);
     }
 
     return (
@@ -67,7 +73,7 @@ class Fretboard extends Component {
           <FretboardHeader />
 
           <tbody>
-            {tbody}
+            {rows}
           </tbody>
         </table>
       </div>
