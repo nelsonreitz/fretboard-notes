@@ -112,6 +112,11 @@ const TUNINGS = [
     name: "E Standard",
     abbr: "e_std",
     notes: ["E", "A", "D", "G", "B", "E"]
+  },
+  {
+    name: "D Standard",
+    abbr: "d_std",
+    notes: ["D", "G", "C", "F", "A", "D"]
   }
 ];
 
