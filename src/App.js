@@ -29,8 +29,7 @@ class Footer extends Component {
 class FretboardHeader extends Component {
   render() {
     let columns = [
-      <th className="Spacer" key="spacer1"></th>,
-      <th className="Spacer" key="spacer2"></th>
+      <th className="Spacer" colSpan="2" key="spacer"></th>,
     ];
 
     // Create fret numbers
@@ -55,17 +54,26 @@ class Fretboard extends Component {
     let rows = [];
 
     // Create strings
-    for (let i = 0; i < STRINGS + 1; i++) {
+    for (let i = 0; i < STRINGS; i++) {
       let className = "String-" + i;
+      let openNote = TUNINGS[0].notes[i];
       let columns = [
-        <td className="Open" key="open">{i}</td>,
+        <td className="Open" key="open">{openNote}</td>,
         <td className="Spacer" key="spacer"></td>
       ];
+
+      // Find notes of current string
+      let currentString;
+      for (const string of STRINGNOTES) {
+        if (string.openNote === openNote) {
+          currentString = string;
+        }
+      }
 
       // Create frets
       for (let j = 0; j < FRETS; j++) {
         let fretNumber = j + 1;
-        let fretNote = TUNINGS[0][i][j];
+        let fretNote = currentString.fretNotes[j];
         let className = "Fret-" + fretNumber;
         columns.push(<td className={className} key={fretNumber}>{fretNote}</td>);
       }
@@ -103,14 +111,31 @@ const TUNINGS = [
   {
     name: "E Standard",
     abbr: "e_std",
-    "0": ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"],
-    "1": ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"],
-    "2": ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"],
-    "3": ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"],
-    "4": ["Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D"],
-    "5": ["Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"],
-    "6": ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"],
+    notes: ["E", "A", "D", "G", "B", "E"]
   }
+];
+
+const STRINGNOTES = [
+  {
+    openNote: "A",
+    fretNotes: ["Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"]
+  },
+  {
+    openNote: "B",
+    fretNotes: ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
+  },
+  {
+    openNote: "D",
+    fretNotes: ["Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D"]
+  },
+  {
+    openNote: "E",
+    fretNotes: ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"]
+  },
+  {
+    openNote: "G",
+    fretNotes: ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"]
+  },
 ];
 
 export default App;
