@@ -144,7 +144,7 @@ const STRINGNOTES = [
   {
     openNote: "Db",
     fretNotes: ["D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db"]
-  }
+  },
   {
     openNote: "D",
     fretNotes: ["Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D"]
