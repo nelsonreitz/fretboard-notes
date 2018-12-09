@@ -63,12 +63,7 @@ class Fretboard extends Component {
       ];
 
       // Find notes of current string
-      let currentString;
-      for (const string of STRINGNOTES) {
-        if (string.openNote === openNote) {
-          currentString = string;
-        }
-      }
+      let currentString = STRINGNOTES.find(string => string.openNote === openNote);
 
       // Create frets
       for (let j = 0; j < FRETS; j++) {
