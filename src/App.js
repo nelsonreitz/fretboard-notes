@@ -51,19 +51,26 @@ class FretboardHeader extends Component {
 
 class Fretboard extends Component {
   render() {
+    let selectedTuning = this.props.tuning;
+    let tunings = this.props.tunings;
+    let stringNotes = this.props.stringNotes;
+
+    // Find notes of selected tuning
+    let tuning = tunings.find(tuning => tuning.abbr === selectedTuning);
+
     let rows = [];
 
     // Create strings
     for (let i = 0; i < STRINGS; i++) {
       let className = "String-" + i;
-      let openNote = TUNINGS[0].notes[i];
+      let openNote = tuning.notes[i];
       let columns = [
         <td className="Open" key="open">{openNote}</td>,
         <td className="Spacer" key="spacer"></td>
       ];
 
       // Find notes of current string
-      let currentString = STRINGNOTES.find(string => string.openNote === openNote);
+      let currentString = stringNotes.find(string => string.openNote === openNote);
 
       // Create frets
       for (let j = 0; j < FRETS; j++) {
@@ -95,7 +102,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Fretboard />
+        <Fretboard tuning="e_std" tunings={TUNINGS} stringNotes={STRINGNOTES} />
         <Footer />
       </div>
     );
