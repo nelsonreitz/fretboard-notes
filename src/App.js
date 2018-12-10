@@ -26,6 +26,21 @@ class Footer extends Component {
   }
 }
 
+class TuningSelect extends Component {
+  render() {
+    let buttons = [];
+
+    for (let tuning of this.props.tunings) {
+      buttons.push(<button value={tuning.abbr} key={tuning.abbr}>{tuning.name}</button>);
+    }
+    return (
+       <div className="TuningSelect">
+        {buttons}
+       </div>
+    );
+  }
+}
+
 class FretboardHeader extends Component {
   render() {
     let columns = [
@@ -103,6 +118,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Fretboard tuning="e_std" tunings={TUNINGS} stringNotes={STRINGNOTES} />
+        <TuningSelect tunings={TUNINGS} />
         <Footer />
       </div>
     );
