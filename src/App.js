@@ -112,7 +112,8 @@ class Fretboard extends Component {
         );
       }
 
-      rows.push(
+      // Build the strings bottom to tap to respect guitar tabs conventions
+      rows.unshift(
         <tr className={className} key={i}>{columns}</tr>
       );
     }
