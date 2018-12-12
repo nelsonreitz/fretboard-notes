@@ -64,7 +64,9 @@ class FretboardHeader extends Component {
     for (let i  = 0; i < FRETS; i++) {
       let fretNumber = i + 1;
       let className = "Fret-" + fretNumber;
-      columns.push(<th className={className} key={fretNumber}>{fretNumber}</th>);
+      columns.push(
+        <th className={className} key={fretNumber}>{fretNumber}</th>
+      );
     }
 
     return (
@@ -105,10 +107,14 @@ class Fretboard extends Component {
         let fretNumber = j + 1;
         let fretNote = currentString.fretNotes[j];
         let className = "Fret-" + fretNumber;
-        columns.push(<td className={className} key={fretNumber}>{fretNote}</td>);
+        columns.push(
+          <td className={className} key={fretNumber}>{fretNote}</td>
+        );
       }
 
-      rows.push(<tr className={className} key={i}>{columns}</tr>);
+      rows.push(
+        <tr className={className} key={i}>{columns}</tr>
+      );
     }
 
     return (
@@ -146,8 +152,16 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Fretboard selectedTuning={this.state.selectedTuning} tunings={TUNINGS} stringNotes={STRINGNOTES} />
-        <TuningSelect selectedTuning={this.state.selectedTuning} onTuningSelect={this.handleTuningSelect} tunings={TUNINGS} />
+        <Fretboard
+          selectedTuning={this.state.selectedTuning}
+          tunings={TUNINGS}
+          stringNotes={STRINGNOTES}
+        />
+        <TuningSelect
+          selectedTuning={this.state.selectedTuning}
+          onTuningSelect={this.handleTuningSelect}
+          tunings={TUNINGS}
+        />
         <Footer />
       </div>
     );
