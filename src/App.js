@@ -27,12 +27,25 @@ class Footer extends Component {
 }
 
 class TuningSelect extends Component {
+  constructor(props) {
+    super(props);
+    this.handleTuningSelect = this.handleTuningSelect.bind(this);
+  }
+
+  handleTuningSelect(e) {
+    this.props.onTuningSelect(e.target.value);
+  }
+
   render() {
     let buttons = [];
 
+    // Create buttons
     for (let tuning of this.props.tunings) {
-      buttons.push(<button value={tuning.abbr} key={tuning.abbr}>{tuning.name}</button>);
+      buttons.push(
+        <button value={tuning.abbr} key={tuning.abbr} onClick={this.handleTuningSelect}>{tuning.name}</button>
+      );
     }
+
     return (
        <div className="TuningSelect">
         {buttons}
@@ -66,7 +79,7 @@ class FretboardHeader extends Component {
 
 class Fretboard extends Component {
   render() {
-    let selectedTuning = this.props.tuning;
+    let selectedTuning = this.props.selectedTuning;
     let tunings = this.props.tunings;
     let stringNotes = this.props.stringNotes;
 
@@ -113,12 +126,28 @@ class Fretboard extends Component {
 }
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // Default tuning
+      selectedTuning: "e_std"
+    }
+
+    this.handleTuningSelect = this.handleTuningSelect.bind(this);
+  }
+
+  handleTuningSelect(selectedTuning) {
+    this.setState({
+      selectedTuning: selectedTuning
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <Fretboard tuning="e_std" tunings={TUNINGS} stringNotes={STRINGNOTES} />
-        <TuningSelect tunings={TUNINGS} />
+        <Fretboard selectedTuning={this.state.selectedTuning} tunings={TUNINGS} stringNotes={STRINGNOTES} />
+        <TuningSelect selectedTuning={this.state.selectedTuning} onTuningSelect={this.handleTuningSelect} tunings={TUNINGS} />
         <Footer />
       </div>
     );
@@ -135,7 +164,7 @@ const TUNINGS = [
     name: "D Standard",
     abbr: "d_std",
     notes: ["D", "G", "C", "F", "A", "D"]
-  }
+  },
 ];
 
 const STRINGNOTES = [
