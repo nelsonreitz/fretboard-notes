@@ -39,6 +39,7 @@ class TuningButton extends Component {
   render() {
     const tuningAbbr = this.props.tuningAbbr;
     const tuningName = this.props.tuningName;
+
     return (
       <button className="TuningBtn" value={tuningAbbr} onClick={this.handleClick}>
         {tuningName}
@@ -82,7 +83,9 @@ class FretboardHeader extends Component {
       let fretNumber = i + 1;
       let className = "Fret-" + fretNumber;
       columns.push(
-        <th className={className} key={fretNumber}>{fretNumber}</th>
+        <th className={className} key={fretNumber}>
+          {fretNumber}
+        </th>
       );
     }
 
@@ -125,13 +128,17 @@ class Fretboard extends Component {
         let fretNote = currentString.fretNotes[j];
         let className = "Fret-" + fretNumber;
         columns.push(
-          <td className={className} key={fretNumber}>{fretNote}</td>
+          <td className={className} key={fretNumber}>
+            {fretNote}
+          </td>
         );
       }
 
       // Build the strings bottom to tap to respect guitar tabs conventions
       rows.unshift(
-        <tr className={className} key={i}>{columns}</tr>
+        <tr className={className} key={i}>
+          {columns}
+        </tr>
       );
     }
 
