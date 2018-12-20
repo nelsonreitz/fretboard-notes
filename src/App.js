@@ -26,30 +26,47 @@ class Footer extends Component {
   }
 }
 
-class TuningSelect extends Component {
+class TuningButton extends Component {
   constructor(props) {
     super(props);
-    this.handleTuningSelect = this.handleTuningSelect.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleTuningSelect(e) {
+  handleClick(e) {
     this.props.onTuningSelect(e.target.value);
   }
 
+  render() {
+    const tuningAbbr = this.props.tuningAbbr;
+    const tuningName = this.props.tuningName;
+    return (
+      <button className="TuningBtn" value={tuningAbbr} onClick={this.handleClick}>
+        {tuningName}
+      </button>
+    );
+  }
+}
+
+class TuningSelect extends Component {
   render() {
     let buttons = [];
 
     // Create buttons
     for (let tuning of this.props.tunings) {
       buttons.push(
-        <button value={tuning.abbr} key={tuning.abbr} onClick={this.handleTuningSelect}>{tuning.name}</button>
+        <TuningButton
+          key={tuning.abbr}
+          tuningAbbr={tuning.abbr}
+          tuningName={tuning.name}
+          onTuningSelect={this.props.onTuningSelect}
+        />
       );
     }
 
     return (
-       <div className="TuningSelect">
+      <div className="TuningSelect">
         {buttons}
-       </div>
+      </div>
     );
   }
 }
@@ -159,7 +176,6 @@ class App extends Component {
           stringNotes={STRINGNOTES}
         />
         <TuningSelect
-          selectedTuning={this.state.selectedTuning}
           onTuningSelect={this.handleTuningSelect}
           tunings={TUNINGS}
         />
