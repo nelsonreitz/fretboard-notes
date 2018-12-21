@@ -1,39 +1,18 @@
 /* Layout */
 .Container {
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 .App {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.Header {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: #fdfdfd;
-}
-
-.Header .Sitetitle {
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .Footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  margin-top: auto;
   background-color: #fdfdfd;
-}
-
-.Fretboard table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-.Fretboard td {
-  border: 1px solid grey;
 }

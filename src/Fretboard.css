@@ -1,0 +1,14 @@
+.Fretboard {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+.Fretboard table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.Fretboard td {
+  border: 1px solid grey;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Fretboard.css';
 
 const STRINGS_COUNT = 6;
 const FRETS_COUNT = 12;
