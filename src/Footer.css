@@ -1,6 +1,18 @@
 .Footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   margin-top: auto;
-  background-color: #fdfdfd;
+  color: #fff;
+  font-weight: 600;
+  background-color: #48495d;
+}
+
+.Footer .Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Footer a {
+  color: #fff;
 }
