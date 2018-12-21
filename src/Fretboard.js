@@ -91,16 +91,18 @@ class Fretboard extends Component {
   render() {
     return (
       <div className="Fretboard">
-        <table>
-          <FretboardHeader fretsCount={FRETS_COUNT} />
-          <FretboardBody
-            fretsCount={FRETS_COUNT}
-            stringsCount={STRINGS_COUNT}
-            selectedTuning={this.props.selectedTuning}
-            tunings={this.props.tunings}
-            stringNotes={this.props.stringNotes}
-          />
-        </table>
+        <div className="Container">
+          <table>
+            <FretboardHeader fretsCount={FRETS_COUNT} />
+            <FretboardBody
+              fretsCount={FRETS_COUNT}
+              stringsCount={STRINGS_COUNT}
+              selectedTuning={this.props.selectedTuning}
+              tunings={this.props.tunings}
+              stringNotes={this.props.stringNotes}
+            />
+          </table>
+        </div>
       </div>
     );
   }

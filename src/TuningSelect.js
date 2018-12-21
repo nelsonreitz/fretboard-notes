@@ -18,10 +18,12 @@ class TuningSelect extends Component {
     }
 
     return (
-      <fieldset className="TuningSelect">
-        <legend>Choose a tuning:</legend>
-        {buttons}
-      </fieldset>
+      <div className="Container">
+        <fieldset className="TuningSelect">
+          <legend>Choose a tuning:</legend>
+          {buttons}
+        </fieldset>
+      </div>
     );
   }
 }
