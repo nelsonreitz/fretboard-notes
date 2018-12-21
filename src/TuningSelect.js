@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TuningButton from './TuningButton.js';
+import './TuningSelect.css';
 
 class TuningSelect extends Component {
   render() {
@@ -18,11 +19,13 @@ class TuningSelect extends Component {
     }
 
     return (
-      <div className="Container">
-        <fieldset className="TuningSelect">
-          <legend>Choose a tuning:</legend>
-          {buttons}
-        </fieldset>
+      <div className="TuningSelect">
+        <div className="Container">
+          <fieldset>
+            <legend>Choose a tuning:</legend>
+            {buttons}
+          </fieldset>
+        </div>
       </div>
     );
   }
