@@ -9,10 +9,3 @@
   min-height: 100vh;
   flex-direction: column;
 }
-
-.Footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-top: auto;
-  background-color: #fdfdfd;
-}
