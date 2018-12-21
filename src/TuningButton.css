@@ -1,0 +1,16 @@
+.TuningButton {
+  padding: 1rem 2rem;
+  margin-right: .5rem;
+  font-size: .875rem;
+  font-weight: 500;
+  background-color: transparent;
+  border: 1px solid lightgrey;
+  border-radius: .125rem;
+  cursor: pointer;
+  transition: background-color .05s ease, border-color .05s ease;
+}
+
+.TuningButton:hover {
+  background-color: lightgrey;
+  border-color: grey;
+}

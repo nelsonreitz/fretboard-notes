@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './TuningButton.css';
 
 class TuningButton extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class TuningButton extends Component {
     const tuningName = this.props.tuningName;
 
     return (
-      <button className="TuningBtn" value={tuningAbbr} onClick={this.handleClick}>
+      <button className="TuningButton" value={tuningAbbr} onClick={this.handleClick}>
         {tuningName}
       </button>
     );
