@@ -28,6 +28,14 @@ function FretboardHeader(props) {
   );
 }
 
+function Note(props) {
+  return (
+    <div className="FretNote">
+      {props.note}
+    </div>
+  );
+}
+
 function FretboardBody(props) {
   let selectedTuning = props.selectedTuning;
   let tunings = props.tunings;
@@ -56,7 +64,7 @@ function FretboardBody(props) {
       let className = "Fret-" + fretNumber;
       columns.push(
         <td className={className} key={fretNumber}>
-          {fretNote}
+          <Note note={fretNote} />
         </td>
       );
     }
