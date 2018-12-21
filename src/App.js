@@ -65,9 +65,10 @@ class TuningSelect extends Component {
     }
 
     return (
-      <div className="TuningSelect">
+      <fieldset className="TuningSelect">
+        <legend>Choose a tuning:</legend>
         {buttons}
-      </div>
+      </fieldset>
     );
   }
 }
