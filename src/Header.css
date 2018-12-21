@@ -1,15 +1,21 @@
 .Header {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   background-color: #fdfdfd;
 }
 
 .Header .Sitetitle {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: .5rem;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .Header .SiteDescription {
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1;
 }
