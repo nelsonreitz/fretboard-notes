@@ -1,0 +1,15 @@
+.Header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #fdfdfd;
+}
+
+.Header .Sitetitle {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.Header .SiteDescription {
+  margin-top: 0;
+  margin-bottom: 0;
+}
