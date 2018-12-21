@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 
-const STRINGS = 6;
-const FRETS = 12;
+const STRINGS_COUNT = 6;
+const FRETS_COUNT = 12;
 
 function FretboardHeader(props) {
+  let fretsCount = props.fretsCount;
   let columns = [
     <th className="Spacer" colSpan="2" key="spacer"></th>,
   ];
 
   // Create fret numbers
-  for (let i  = 0; i < FRETS; i++) {
+  for (let i  = 0; i < fretsCount; i++) {
     let fretNumber = i + 1;
     let className = "Fret-" + fretNumber;
     columns.push(
@@ -37,6 +38,8 @@ function Note(props) {
 }
 
 function FretboardBody(props) {
+  let fretsCount = props.fretsCount;
+  let stringsCount = props.stringsCount;
   let selectedTuning = props.selectedTuning;
   let tunings = props.tunings;
   let stringNotes = props.stringNotes;
@@ -46,7 +49,7 @@ function FretboardBody(props) {
   let tuning = tunings.find(tuning => tuning.abbr === selectedTuning);
 
   // Create strings
-  for (let i = 0; i < STRINGS; i++) {
+  for (let i = 0; i < stringsCount; i++) {
     let className = "String-" + i;
     let openNote = tuning.notes[i];
     let columns = [
@@ -58,7 +61,7 @@ function FretboardBody(props) {
     let currentString = stringNotes.find(string => string.openNote === openNote);
 
     // Create frets
-    for (let j = 0; j < FRETS; j++) {
+    for (let j = 0; j < fretsCount; j++) {
       let fretNumber = j + 1;
       let fretNote = currentString.fretNotes[j];
       let className = "Fret-" + fretNumber;
@@ -89,8 +92,10 @@ class Fretboard extends Component {
     return (
       <div className="Fretboard">
         <table>
-          <FretboardHeader />
-          <FretboardBody 
+          <FretboardHeader fretsCount={FRETS_COUNT} />
+          <FretboardBody
+            fretsCount={FRETS_COUNT}
+            stringsCount={STRINGS_COUNT}
             selectedTuning={this.props.selectedTuning}
             tunings={this.props.tunings}
             stringNotes={this.props.stringNotes}
