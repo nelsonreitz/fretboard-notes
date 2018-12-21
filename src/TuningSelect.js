@@ -3,7 +3,7 @@ import TuningButton from './TuningButton.js';
 
 class TuningSelect extends Component {
   render() {
-    let buttons = [];
+   const buttons = [];
 
     // Create buttons
     for (let tuning of this.props.tunings) {

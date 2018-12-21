@@ -4,15 +4,15 @@ const STRINGS_COUNT = 6;
 const FRETS_COUNT = 12;
 
 function FretboardHeader(props) {
-  let fretsCount = props.fretsCount;
-  let columns = [
+  const fretsCount = props.fretsCount;
+  const columns = [
     <th className="Spacer" colSpan="2" key="spacer"></th>,
   ];
 
   // Create fret numbers
   for (let i  = 0; i < fretsCount; i++) {
-    let fretNumber = i + 1;
-    let className = "Fret-" + fretNumber;
+    const fretNumber = i + 1;
+    const className = "Fret-" + fretNumber;
     columns.push(
       <th className={className} key={fretNumber}>
         {fretNumber}
@@ -38,33 +38,33 @@ function Note(props) {
 }
 
 function FretboardBody(props) {
-  let fretsCount = props.fretsCount;
-  let stringsCount = props.stringsCount;
-  let selectedTuning = props.selectedTuning;
-  let tunings = props.tunings;
-  let stringNotes = props.stringNotes;
-  let rows = [];
+  const fretsCount = props.fretsCount;
+  const stringsCount = props.stringsCount;
+  const selectedTuning = props.selectedTuning;
+  const tunings = props.tunings;
+  const stringNotes = props.stringNotes;
+  const rows = [];
 
   // Find notes of selected tuning
-  let tuning = tunings.find(tuning => tuning.abbr === selectedTuning);
+  const tuning = tunings.find(tuning => tuning.abbr === selectedTuning);
 
   // Create strings
   for (let i = 0; i < stringsCount; i++) {
-    let className = "String-" + i;
-    let openNote = tuning.notes[i];
-    let columns = [
+    const className = "String-" + i;
+    const openNote = tuning.notes[i];
+    const columns = [
       <td className="Open" key="open">{openNote}</td>,
       <td className="Spacer" key="spacer"></td>
     ];
 
     // Find notes of current string
-    let currentString = stringNotes.find(string => string.openNote === openNote);
+    const currentString = stringNotes.find(string => string.openNote === openNote);
 
     // Create frets
     for (let j = 0; j < fretsCount; j++) {
-      let fretNumber = j + 1;
-      let fretNote = currentString.fretNotes[j];
-      let className = "Fret-" + fretNumber;
+      const fretNumber = j + 1;
+      const fretNote = currentString.fretNotes[j];
+      const className = "Fret-" + fretNumber;
       columns.push(
         <td className={className} key={fretNumber}>
           <Note note={fretNote} />
