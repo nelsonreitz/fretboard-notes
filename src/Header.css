@@ -1,7 +1,8 @@
-.HeaderContent {
+.Header {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid lightgrey;
+  color: #fff;
+  background-color: #48495d;
 }
 
 .Header .Sitetitle {
