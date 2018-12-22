@@ -6,8 +6,10 @@ class Header extends Component {
     return (
       <header className="Header">
         <div className="Container">
-          <h1 className="Sitetitle">Fretboard Chart</h1>
-          <p className="SiteDescription">Visual chart to learn guitar notes</p>
+          <div className="HeaderContent">
+            <h1 className="Sitetitle">Fretboard Chart</h1>
+            <p className="SiteDescription">Visual chart to learn guitar notes</p>
+          </div>
         </div>
       </header>
     );
