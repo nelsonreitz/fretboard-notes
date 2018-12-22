@@ -3,18 +3,16 @@
   margin-right: .5rem;
   font-size: .875rem;
   font-weight: 500;
-  background-color: transparent;
-  border: 1px solid lightgrey;
+  background-color: #eff0f5;
+  border: 0;
   border-radius: .125rem;
   cursor: pointer;
 }
 
 .TuningButton:hover {
-  background-color: lightgrey;
-  border-color: grey;
+  background-color: #d7dcea;
 }
 
 .TuningButton.Active {
-  background-color: #d2d5ea;
-  border-color: #a3a8cc;
+  background-color: #bfc3e2;
 }
