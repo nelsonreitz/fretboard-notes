@@ -13,3 +13,8 @@
   background-color: lightgrey;
   border-color: grey;
 }
+
+.TuningButton.Active {
+  background-color: #d2d5ea;
+  border-color: #a3a8cc;
+}

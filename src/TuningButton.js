@@ -16,7 +16,11 @@ class TuningButton extends Component {
     const tuningName = this.props.tuningName;
 
     return (
-      <button className="TuningButton" value={tuningAbbr} onClick={this.handleClick}>
+      <button
+        className={"TuningButton" + (this.props.isActive ? " Active" : "")}
+        value={tuningAbbr}
+        onClick={this.handleClick}
+      >
         {tuningName}
       </button>
     );

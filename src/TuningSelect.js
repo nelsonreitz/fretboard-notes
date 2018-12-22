@@ -13,6 +13,7 @@ class TuningSelect extends Component {
           key={tuning.abbr}
           tuningAbbr={tuning.abbr}
           tuningName={tuning.name}
+          isActive={tuning.abbr === this.props.activeTuning}
           onTuningSelect={this.props.onTuningSelect}
         />
       );

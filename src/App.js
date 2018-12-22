@@ -12,15 +12,15 @@ class App extends Component {
     super(props);
     this.state = {
       // Default tuning
-      selectedTuning: "e_std"
+      activeTuning: "e_std"
     }
 
     this.handleTuningSelect = this.handleTuningSelect.bind(this);
   }
 
-  handleTuningSelect(selectedTuning) {
+  handleTuningSelect(activeTuning) {
     this.setState({
-      selectedTuning: selectedTuning
+      activeTuning: activeTuning
     });
   }
 
@@ -29,13 +29,14 @@ class App extends Component {
       <div className="App">
         <Header />
         <Fretboard
-          selectedTuning={this.state.selectedTuning}
           tunings={TUNINGS}
           stringNotes={STRINGNOTES}
+          activeTuning={this.state.activeTuning}
         />
         <TuningSelect
-          onTuningSelect={this.handleTuningSelect}
           tunings={TUNINGS}
+          onTuningSelect={this.handleTuningSelect}
+          activeTuning={this.state.activeTuning}
         />
         <Footer />
       </div>

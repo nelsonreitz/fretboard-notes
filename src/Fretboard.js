@@ -45,13 +45,13 @@ function Note(props) {
 function FretboardBody(props) {
   const fretsCount = props.fretsCount;
   const stringsCount = props.stringsCount;
-  const selectedTuning = props.selectedTuning;
+  const activeTuning = props.activeTuning;
   const tunings = props.tunings;
   const stringNotes = props.stringNotes;
   const rows = [];
 
   // Find notes of selected tuning
-  const tuning = tunings.find(tuning => tuning.abbr === selectedTuning);
+  const tuning = tunings.find(tuning => tuning.abbr === activeTuning);
 
   // Create strings
   for (let i = 0; i < stringsCount; i++) {
@@ -104,7 +104,7 @@ class Fretboard extends Component {
             <FretboardBody
               fretsCount={FRETS_COUNT}
               stringsCount={STRINGS_COUNT}
-              selectedTuning={this.props.selectedTuning}
+              activeTuning={this.props.activeTuning}
               tunings={this.props.tunings}
               stringNotes={this.props.stringNotes}
             />
