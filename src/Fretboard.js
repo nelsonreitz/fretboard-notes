@@ -31,8 +31,11 @@ function FretboardHeader(props) {
 }
 
 function Note(props) {
+  // Add special class for half-step notes
+  const className = "FretNote" + props.note > 1 ? " HalfstepNote" : "";
+
   return (
-    <div className="FretNote">
+    <div className={className}>
       {props.note}
     </div>
   );
@@ -65,7 +68,7 @@ function FretboardBody(props) {
     for (let j = 0; j < fretsCount; j++) {
       const fretNumber = j + 1;
       const fretNote = currentString.fretNotes[j];
-      const className = "Fret-" + fretNumber;
+      const className = "Fret Fret-" + fretNumber;
       columns.push(
         <td className={className} key={fretNumber}>
           <Note note={fretNote} />
