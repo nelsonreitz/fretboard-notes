@@ -13,6 +13,15 @@
   background-color: #d7dcea;
 }
 
+.TuningButton:focus {
+  background-color: #d7dcea;
+  outline: 0;
+}
+
 .TuningButton.Active {
   background-color: #bfc3e2;
+}
+
+.TuningButton.Active:focus {
+  background-color: #a6abc3;
 }
