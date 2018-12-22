@@ -32,7 +32,7 @@ function FretboardHeader(props) {
 
 function Note(props) {
   // Add special class for half-step notes
-  const className = "FretNote" + props.note > 1 ? " HalfstepNote" : "";
+  const className = "FretNote" + (props.note.length > 1 ? " HalfstepNote" : "");
 
   return (
     <div className={className}>
