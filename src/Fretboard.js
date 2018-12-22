@@ -7,7 +7,8 @@ const FRETS_COUNT = 12;
 function FretboardHeader(props) {
   const fretsCount = props.fretsCount;
   const columns = [
-    <th className="Spacer" colSpan="2" key="spacer"></th>,
+    <th className="Open" key="open"></th>,
+    <th className="Spacer" key="spacer"></th>
   ];
 
   // Create fret numbers
@@ -32,7 +33,7 @@ function FretboardHeader(props) {
 
 function Note(props) {
   // Add special class for half-step notes
-  const className = "FretNote" + (props.note.length > 1 ? " HalfstepNote" : "");
+  const className = "Note Note-" + props.note + (props.note.length > 1 ? " HalfstepNote" : "");
 
   return (
     <div className={className}>
@@ -57,7 +58,9 @@ function FretboardBody(props) {
     const className = "String-" + i;
     const openNote = tuning.notes[i];
     const columns = [
-      <td className="Open" key="open">{openNote}</td>,
+      <td className="Open" key="open">
+        <Note note={openNote} />
+      </td>,
       <td className="Spacer" key="spacer"></td>
     ];
 

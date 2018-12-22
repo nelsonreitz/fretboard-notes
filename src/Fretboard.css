@@ -1,5 +1,5 @@
 .Fretboard {
-  padding-top: 8rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
 }
 
@@ -7,6 +7,10 @@
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+}
+
+.Fretboard .Fretnumbers th:not(.Open) {
+  border-right: 1px solid grey;
 }
 
 .Fretboard td {
@@ -19,22 +23,46 @@
   text-align: center;
 }
 
-.Fretboard .FretNote {
+.Fretboard .Note {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 2rem;
   height: 2rem;
   margin-top: -2.25rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.Fretboard .Fret .Note {
   margin-right: auto;
   margin-left: auto;
   font-size: .875rem;
-  font-weight: 600;
-  line-height: 1;
   background-color: lightgrey;
   border-radius: 50%;
 }
 
-.Fretboard .HalfstepNote {
+.Fretboard .Fret .HalfstepNote {
   display: none;
+}
+
+.Fretboard .Open {
+  width: 4rem;
+  border: 0;
+}
+
+.Fretboard .Fretnumbers th.Spacer,
+.Fretboard td.Spacer {
+  width: 2rem;
+  border-right: .25rem solid black;
+  border-left: 0;
+}
+
+.Fretboard tr:last-of-type td {
+  height: 1rem;
+  border-bottom: 0;
+}
+
+.Fretboard tr:last-of-type .Note {
+  margin-top: -1.25rem;
 }
