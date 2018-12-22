@@ -7,7 +7,6 @@
   border: 1px solid lightgrey;
   border-radius: .125rem;
   cursor: pointer;
-  transition: background-color .05s ease, border-color .05s ease;
 }
 
 .TuningButton:hover {
