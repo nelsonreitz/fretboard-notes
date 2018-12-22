@@ -1,5 +1,5 @@
 .Fretboard {
-  padding-top: 4rem;
+  padding-top: 8rem;
   padding-bottom: 4rem;
 }
 
@@ -9,7 +9,7 @@
   table-layout: fixed;
 }
 
-.Fretboard .Fretnumbers th:not(.Open) {
+.Fretboard .FretNumbers th:not(.Open) {
   border-right: 1px solid grey;
 }
 
@@ -51,11 +51,15 @@
   border: 0;
 }
 
-.Fretboard .Fretnumbers th.Spacer,
+.Fretboard .FretNumbers th.Spacer,
 .Fretboard td.Spacer {
   width: 2rem;
   border-right: .25rem solid black;
   border-left: 0;
+}
+
+.Fretboard tr th {
+  height: 1rem;
 }
 
 .Fretboard tr:last-of-type td {
@@ -65,4 +69,8 @@
 
 .Fretboard tr:last-of-type .Note {
   margin-top: -1.25rem;
+}
+
+.Fretboard .FretNumber {
+  margin-top: -4rem;
 }

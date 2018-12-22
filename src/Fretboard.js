@@ -17,14 +17,14 @@ function FretboardHeader(props) {
     const className = "Fret-" + fretNumber;
     columns.push(
       <th className={className} key={fretNumber}>
-        {fretNumber}
+        <div className="FretNumber">{fretNumber}</div>
       </th>
     );
   }
 
   return (
     <thead>
-      <tr className="Fretnumbers">
+      <tr className="FretNumbers">
         {columns}
       </tr>
     </thead>
