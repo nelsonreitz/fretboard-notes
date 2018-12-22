@@ -9,18 +9,8 @@
   table-layout: fixed;
 }
 
-.Fretboard .FretNumbers th:not(.Open) {
-  border-right: 1px solid grey;
-}
-
 .Fretboard td {
   border: 1px solid grey;
-}
-
-.Fretboard .Fret {
-  position: relative;
-  height: 2rem;
-  text-align: center;
 }
 
 .Fretboard .Note {
@@ -32,6 +22,38 @@
   margin-top: -2.25rem;
   font-weight: 600;
   line-height: 1;
+}
+
+/* Table header */
+.Fretboard th {
+  height: 1rem;
+}
+
+.Fretboard .Open {
+  width: 4rem;
+  border: 0;
+}
+
+.Fretboard .FretNumbers th:not(.Open) {
+  border-right: 1px solid grey;
+}
+
+.Fretboard .FretNumbers th.Spacer,
+.Fretboard td.Spacer {
+  width: 2rem;
+  border-right: .25rem solid black;
+  border-left: 0;
+}
+
+.Fretboard .FretNumber {
+  margin-top: -3.5rem;
+}
+
+/* Table body */
+.Fretboard .Fret {
+  position: relative;
+  height: 2rem;
+  text-align: center;
 }
 
 .Fretboard .Fret .Note {
@@ -46,22 +68,6 @@
   display: none;
 }
 
-.Fretboard .Open {
-  width: 4rem;
-  border: 0;
-}
-
-.Fretboard .FretNumbers th.Spacer,
-.Fretboard td.Spacer {
-  width: 2rem;
-  border-right: .25rem solid black;
-  border-left: 0;
-}
-
-.Fretboard tr th {
-  height: 1rem;
-}
-
 .Fretboard tr:last-of-type td {
   height: 1rem;
   border-bottom: 0;
@@ -69,8 +75,4 @@
 
 .Fretboard tr:last-of-type .Note {
   margin-top: -1.25rem;
-}
-
-.Fretboard .FretNumber {
-  margin-top: -3.5rem;
 }
