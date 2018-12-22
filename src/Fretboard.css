@@ -12,3 +12,29 @@
 .Fretboard td {
   border: 1px solid grey;
 }
+
+.Fretboard .Fret {
+  position: relative;
+  height: 2rem;
+  text-align: center;
+}
+
+.Fretboard .FretNote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-top: -2.25rem;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1;
+  background-color: lightgrey;
+  border-radius: 50%;
+}
+
+.Fretboard .HalfstepNote {
+  display: none;
+}
