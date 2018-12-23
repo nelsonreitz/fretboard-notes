@@ -13,8 +13,15 @@ a:hover {
 
 /* Layout */
 .Container {
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media screen and (min-width: 576px) {
+  .Container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
 }
 
 .App {
