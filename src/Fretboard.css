@@ -1,10 +1,12 @@
 .Fretboard {
   padding-top: 8rem;
   padding-bottom: 4rem;
+  overflow-x: auto;
 }
 
 .Fretboard table {
   width: 100%;
+  min-width: 44rem;
   border-collapse: collapse;
   table-layout: fixed;
 }
