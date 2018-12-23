@@ -7,12 +7,20 @@
   background-color: #48495d;
 }
 
-.Footer .Container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+@media screen and (min-width: 576px) {
+  .Footer .Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .Footer a {
   color: #fff;
+}
+
+@media screen and (max-width: 576px) {
+  .Footer .Copyright {
+    margin-bottom: .25rem;
+  }
 }
