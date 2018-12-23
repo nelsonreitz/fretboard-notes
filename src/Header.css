@@ -9,14 +9,15 @@
   margin-top: 0;
   margin-bottom: .5rem;
   font-size: 2.5rem;
+  font-weight: 400;
   text-transform: uppercase;
   line-height: 1;
+  letter-spacing: .02em;
 }
 
 .Header .SiteDescription {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.125rem;
   font-weight: 500;
   line-height: 1;
   opacity: .8;

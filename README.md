@@ -1,4 +1,11 @@
+# Fretboard Notes
+
+This is a small app display a fretboard chart to help learn notes on a guitar neck.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Potential add-ons functionalities:
+- Toggle for half-steps notes
+- Select custom string note
 
 ## Available Scripts
 

@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <header className="Header">
         <div className="Container">
-          <h1 className="Sitetitle">Fretboard Chart</h1>
+          <h1 className="Sitetitle">Fretboard Notes</h1>
           <p className="SiteDescription">Visual chart to learn guitar notes</p>
         </div>
       </header>
