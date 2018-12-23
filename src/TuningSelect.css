@@ -1,3 +1,9 @@
+@media screen and (min-width: 576px) {
+  .TuningSelect {
+    padding-bottom: 4rem;
+  }
+}
+
 .TuningSelect fieldset {
   padding: 0;
   margin-right: 0;
@@ -8,4 +14,17 @@
 .TuningSelect fieldset legend {
   margin-bottom: 1rem;
   font-size: 1.5rem;
+}
+
+.TuningSelect .TuningButton {
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+}
+
+@media screen and (max-width: 576px) {
+  .TuningSelect .TuningButton {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 }
