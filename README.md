@@ -6,26 +6,41 @@ This is a small react app displaying a fretboard chart to help learn notes on a 
 
 Make sure you have [NodeJS](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/lang/en/) installed globally.
 
-Install depedencies:  
-`yarn`
+Install depedencies:
 
-Run the app in development mode:  
-`yarn start`
+```shell
+yarn
+```
+
+Run the app in development mode:
+
+```shell
+yarn start
+```
 
 You can now access the app at [http://localhost:3000/](http://localhost:3000/).
 
-Run tests:  
-`yarn test`
+Run tests:
 
-Build the app for production in the `build` folder:  
-`yarn build`
+```shell
+yarn test
+```
+
+Build the app for production in the `build` folder:
+
+```shell
+yarn build
+```
 
 ## Deployment
 
-Deploy on github pages:  
-`yarn deploy`
+Deploy on github pages:
 
-## Potential add-ons functionalities:
+```shell
+yarn deploy
+```
+
+## Potential add-ons functionalities
 
 - Toggle for half-steps notes
 - Select custom string note
