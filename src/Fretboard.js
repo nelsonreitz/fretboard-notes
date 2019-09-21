@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Fretboard.css';
 
 const STRINGS_COUNT = 6;
 const FRETS_COUNT = 12;
 
-function FretboardHeader(props) {
-  const fretsCount = props.fretsCount;
+function FretboardHeader({fretsCount}) {
   const columns = [
     <th className="Open" key="open"></th>,
     <th className="Spacer" key="spacer"></th>
@@ -31,23 +30,18 @@ function FretboardHeader(props) {
   );
 }
 
-function Note(props) {
+function Note({note}) {
   // Add special class for half-step notes
-  const className = "Note Note-" + props.note + (props.note.length > 1 ? " HalfstepNote" : "");
+  const className = "Note Note-" + note + (note.length > 1 ? " HalfstepNote" : "");
 
   return (
     <div className={className}>
-      {props.note}
+      {note}
     </div>
   );
 }
 
-function FretboardBody(props) {
-  const fretsCount = props.fretsCount;
-  const stringsCount = props.stringsCount;
-  const activeTuning = props.activeTuning;
-  const tunings = props.tunings;
-  const stringNotes = props.stringNotes;
+function FretboardBody({fretsCount, stringsCount, activeTuning, tunings, stringNotes}) {
   const rows = [];
 
   // Find notes of selected tuning
@@ -94,25 +88,23 @@ function FretboardBody(props) {
   );
 }
 
-class Fretboard extends Component {
-  render() {
-    return (
-      <div className="Fretboard">
-        <div className="Container">
-          <table>
-            <FretboardHeader fretsCount={FRETS_COUNT} />
-            <FretboardBody
-              fretsCount={FRETS_COUNT}
-              stringsCount={STRINGS_COUNT}
-              activeTuning={this.props.activeTuning}
-              tunings={this.props.tunings}
-              stringNotes={this.props.stringNotes}
-            />
-          </table>
-        </div>
+function Fretboard({activeTuning, tunings, stringNotes}) {
+  return (
+    <div className="Fretboard">
+      <div className="Container">
+        <table>
+          <FretboardHeader fretsCount={FRETS_COUNT} />
+          <FretboardBody
+            fretsCount={FRETS_COUNT}
+            stringsCount={STRINGS_COUNT}
+            activeTuning={activeTuning}
+            tunings={tunings}
+            stringNotes={stringNotes}
+          />
+        </table>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Fretboard;
