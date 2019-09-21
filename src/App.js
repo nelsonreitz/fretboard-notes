@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import tunings from './data/tunings.js';
+import stringNotes from './data/stringNotes.js';
+
 import Header from './Header.js';
 import Fretboard from './Fretboard.js';
 import TuningSelect from './TuningSelect.js';
@@ -29,12 +32,12 @@ class App extends Component {
       <div className="App">
         <Header />
         <Fretboard
-          tunings={TUNINGS}
-          stringNotes={STRINGNOTES}
+          tunings={tunings}
+          stringNotes={stringNotes}
           activeTuning={this.state.activeTuning}
         />
         <TuningSelect
-          tunings={TUNINGS}
+          tunings={tunings}
           onTuningSelect={this.handleTuningSelect}
           activeTuning={this.state.activeTuning}
         />
@@ -43,89 +46,5 @@ class App extends Component {
     );
   }
 }
-
-const TUNINGS = [
-  {
-    name: "E Standard",
-    abbr: "e_std",
-    notes: ["E", "A", "D", "G", "B", "E"]
-  },
-  {
-    name: "Eb Standard",
-    abbr: "eb_std",
-    notes: ["Eb", "Ab", "Db", "Gb", "Bb", "Eb"]
-  },
-  {
-    name: "D Standard",
-    abbr: "d_std",
-    notes: ["D", "G", "C", "F", "A", "D"]
-  },
-  {
-    name: "Drop D",
-    abbr: "drop_d",
-    notes: ["D", "A", "D", "G", "B", "E"]
-  },
-  {
-    name: "C Standard",
-    abbr: "c_std",
-    notes: ["C", "F", "Bb", "Eb", "G", "C"]
-  },
-  {
-    name: "Drop C",
-    abbr: "drop_c",
-    notes: ["C", "G", "C", "F", "A", "D"]
-  },
-];
-
-const STRINGNOTES = [
-  {
-    openNote: "Ab",
-    fretNotes: ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"]
-  },
-  {
-    openNote: "A",
-    fretNotes: ["Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"]
-  },
-  {
-    openNote: "Bb",
-    fretNotes: ["B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb"]
-  },
-  {
-    openNote: "B",
-    fretNotes: ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
-  },
-  {
-    openNote: "C",
-    fretNotes: ["Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"]
-  },
-  {
-    openNote: "Db",
-    fretNotes: ["D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db"]
-  },
-  {
-    openNote: "D",
-    fretNotes: ["Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D"]
-  },
-  {
-    openNote: "Eb",
-    fretNotes: ["E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb"]
-  },
-  {
-    openNote: "E",
-    fretNotes: ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"]
-  },
-  {
-    openNote: "F",
-    fretNotes: ["Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F"]
-  },
-  {
-    openNote: "Gb",
-    fretNotes: ["G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb"]
-  },
-  {
-    openNote: "G",
-    fretNotes: ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"]
-  }
-];
 
 export default App;
