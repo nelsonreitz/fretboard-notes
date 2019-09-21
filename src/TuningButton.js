@@ -1,30 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './TuningButton.css';
 
-class TuningButton extends Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
+function TuningButton({tuningAbbr, tuningName, isActive, onTuningSelect}) {
+  const handleClick = (e) => {
+    onTuningSelect(e.target.value);
   }
 
-  handleClick(e) {
-    this.props.onTuningSelect(e.target.value);
-  }
-
-  render() {
-    const tuningAbbr = this.props.tuningAbbr;
-    const tuningName = this.props.tuningName;
-
-    return (
-      <button
-        className={"TuningButton" + (this.props.isActive ? " Active" : "")}
-        value={tuningAbbr}
-        onClick={this.handleClick}
-      >
-        {tuningName}
-      </button>
-    );
-  }
+  return (
+    <button
+      className={"TuningButton" + (isActive ? " Active" : "")}
+      value={tuningAbbr}
+      onClick={handleClick}
+    >
+      {tuningName}
+    </button>
+  );
 }
 
 export default TuningButton;
