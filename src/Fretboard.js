@@ -1,17 +1,17 @@
-import React from 'react';
-import './Fretboard.css';
+import React from "react";
+import "./Fretboard.css";
 
 const STRINGS_COUNT = 6;
 const FRETS_COUNT = 12;
 
-function FretboardHeader({fretsCount}) {
+function FretboardHeader({ fretsCount }) {
   const columns = [
     <th className="Open" key="open"></th>,
     <th className="Spacer" key="spacer"></th>
   ];
 
   // Create fret numbers
-  for (let i  = 0; i < fretsCount; i++) {
+  for (let i = 0; i < fretsCount; i++) {
     const fretNumber = i + 1;
     const className = "Fret-" + fretNumber;
     columns.push(
@@ -23,25 +23,26 @@ function FretboardHeader({fretsCount}) {
 
   return (
     <thead>
-      <tr className="FretNumbers">
-        {columns}
-      </tr>
+      <tr className="FretNumbers">{columns}</tr>
     </thead>
   );
 }
 
-function Note({note}) {
+function Note({ note }) {
   // Add special class for half-step notes
-  const className = "Note Note-" + note + (note.length > 1 ? " HalfstepNote" : "");
+  const className =
+    "Note Note-" + note + (note.length > 1 ? " HalfstepNote" : "");
 
-  return (
-    <div className={className}>
-      {note}
-    </div>
-  );
+  return <div className={className}>{note}</div>;
 }
 
-function FretboardBody({fretsCount, stringsCount, activeTuning, tunings, stringNotes}) {
+function FretboardBody({
+  fretsCount,
+  stringsCount,
+  activeTuning,
+  tunings,
+  stringNotes
+}) {
   const rows = [];
 
   // Find notes of selected tuning
@@ -59,7 +60,9 @@ function FretboardBody({fretsCount, stringsCount, activeTuning, tunings, stringN
     ];
 
     // Find notes of current string
-    const currentString = stringNotes.find(string => string.openNote === openNote);
+    const currentString = stringNotes.find(
+      string => string.openNote === openNote
+    );
 
     // Create frets
     for (let j = 0; j < fretsCount; j++) {
@@ -81,14 +84,10 @@ function FretboardBody({fretsCount, stringsCount, activeTuning, tunings, stringN
     );
   }
 
-  return (
-    <tbody>
-      {rows}
-    </tbody>
-  );
+  return <tbody>{rows}</tbody>;
 }
 
-function Fretboard({activeTuning, tunings, stringNotes}) {
+function Fretboard({ activeTuning, tunings, stringNotes }) {
   return (
     <div className="Fretboard">
       <div className="Container">

@@ -1,9 +1,8 @@
-import React from 'react';
-import TuningButton from './TuningButton.js';
-import './TuningSelect.css';
+import React from "react";
+import TuningButton from "./TuningButton.js";
+import "./TuningSelect.css";
 
-function TuningSelect({tunings, activeTuning, onTuningSelect}) {
-
+function TuningSelect({ tunings, activeTuning, onTuningSelect }) {
   // Create buttons
   const buttons = [];
   for (let tuning of tunings) {
